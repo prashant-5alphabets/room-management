@@ -34,8 +34,8 @@ const colors: any = {
 export class ViewRoomBookingsComponent implements OnInit {
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
-  activeDayIsOpen: boolean = true;
-  view: string = 'day';
+  activeDayIsOpen: boolean = false;
+  view: string = 'month';
   viewDate: Date = new Date();
 
   modalData: {
@@ -50,7 +50,17 @@ export class ViewRoomBookingsComponent implements OnInit {
       // end: new Date(1534330800000 - 27000000)
       end: new Date(1534311000000),
       title: 'Meeting done',
+      desc: 'hahaha',
       color: colors.red
+    },
+    {
+      //start: new Date(1534323600000 - 27000000)
+      start: new Date(1534303800000),
+      // end: new Date(1534330800000 - 27000000)
+      end: new Date(1534311000000),
+      title: 'Meeting done !',
+      desc: 'hahaha',
+      color: colors.blue
     }
   ];
 
@@ -72,6 +82,5 @@ export class ViewRoomBookingsComponent implements OnInit {
       }
     }
   }
-
-
 }
+

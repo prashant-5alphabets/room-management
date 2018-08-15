@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { ViewRoomBookingsComponent } from './view-room-bookings/view-room-bookings.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CalendarModule } from 'angular-calendar';
+import { CalendarEvent, CalendarEventTitleFormatter } from 'angular-calendar';
+import { CustomEventTitleFormatter } from './view-room-bookings/customTitle';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,10 @@ import { CalendarModule } from 'angular-calendar';
     AppRoutingModule,
     CalendarModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide: CalendarEventTitleFormatter,
+    useClass: CustomEventTitleFormatter
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
